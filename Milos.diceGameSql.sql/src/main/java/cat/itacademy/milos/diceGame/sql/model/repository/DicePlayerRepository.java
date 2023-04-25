@@ -1,0 +1,14 @@
+package cat.itacademy.milos.diceGame.sql.model.repository;
+
+import cat.itacademy.milos.diceGame.sql.model.domain.Player;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import java.util.Optional;
+
+@Repository
+public interface DicePlayerRepository extends JpaRepository<Player, Integer> {
+    Optional<Player> findByName(String name);
+
+    boolean existsByName(String name);
+
+}
